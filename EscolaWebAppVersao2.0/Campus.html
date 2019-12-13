@@ -1,0 +1,31 @@
+<form name="campusForm">
+  <!-- Sigla -->
+  <div class="form-group">
+    <label for='sigla'>Sigla:</label>
+    <input type='text' ng-model='campus.sigla' name='sigla' class="form-control" ng-minlength="2" ng-maxlength="3">
+    <div ng-show="campusForm.sigla.$error.required && campusForm.sigla.$dirty" class="alert alert-danger">
+      Por favor, insira a sigla do seu campus!
+    </div>
+    <div ng-show="campusForm.sigla.$error.minlength && campusForm.sigla.$dirty" class="alert alert-danger">
+      A sigla deve ter no mínimo 2 letras
+    </div>
+    <div ng-show="campusForm.sigla.$error.maxlength && campusForm.sigla.$dirty" class="alert alert-danger">
+      A sigla deve ter no máximo 3 letras
+    </div>
+  </div>
+  <!-- Cidade -->
+  <div class="form-group">
+    <label for='cidade'>Cidade:</label>
+    <input type='text' ng-model='campus.cidade' name='cidade' class="form-control" ng-required="true" ng-minlength="2" ng-maxlength="45">
+    <div ng-show="campusForm.cidade.$error.required && campusForm.cidade.$dirty" class="alert alert-danger">
+      Por favor, insira o nome da sua cidade!
+    </div>
+    <div ng-show="campusForm.cidade.$error.minlength && campusForm.cidade.$dirty" class="alert alert-danger">
+      O nome da cidade deve conter, no mínimo, 2 caracteres!
+    </div>
+    <div ng-show="campusForm.cidade.$error.maxlength && campusForm.cidade.$dirty" class="alert alert-danger">
+      O nome da cidade deve conter, no máximo, 45 caracteres!
+    </div>
+  </div>
+  <button ng-click="cadastrar()" type="button" name="Cadastrar" value="Cadastrar" class="btn btn-outline-light btn-block" ng-disabled="campusForm.$invalid">Cadastrar</button><br>
+</form>

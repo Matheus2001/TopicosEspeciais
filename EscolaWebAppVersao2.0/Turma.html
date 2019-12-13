@@ -1,0 +1,28 @@
+      <form  name="turmaform">
+        <div class="form-group">
+          <label for="nome">Nome da Turma: </label>
+          <input type="text" class="form-control" name="nome" ng-model="turma.nome" placeholder="Nome"  ng-minlength="5" />
+
+          <!-- ng-messages | campo nome | 1st -->
+          <div ng-messages="turmaform.nome.$error" ng-if='turmaform.nome.$dirty'>
+            <div ng-message="required" class="alert alert-danger">
+              Por favor, preencha o campo nome!
+            </div>
+            <div ng-message="minlength" class="alert alert-info">
+              O campo nome deve ter no mínimo 5 caracteres.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="id_curso">Curso: </label>
+          <input type="text" class="form-control" name="id_curso" ng-model="turma.id_curso" placeholder="ID curso" ng-required="true">
+
+          <!-- ng-messages | campo ID curso | 2nd -->
+          <div ng-messages="turmaform.id_curso.$error" ng-if='turmaform.id_curso.$dirty'>
+            <div ng-message="required" class="alert alert-danger">
+              Por favor, preencha o campo ID curso!
+            </div>
+          </div>
+        </div>
+        <button ng-click="cadastrar()" type="button" name="Cadastrar" value="Cadastrar" class="btn btn-outline-light btn-block" ng-disabled="turmaform.$invalid">Cadastrar</button><br>
+      </form>

@@ -1,0 +1,77 @@
+<form name="enderecoForm">
+  <!-- Logradouro -->
+  <div class="form-group">
+    <label for='logradouro'>Logradouro:</label>
+    <input type='text' ng-model='endereco.logradouro' name='logradouro' class="form-control"  ng-minlength="5" ng-maxlength="65">
+    <div>
+      <div ng-show="enderecoForm.logradouro.$error.required && enderecoForm.logradouro.$dirty" class="alert alert-danger">
+        Por favor, insira o seu lograoduro!
+      </div>
+      <div ng-show="enderecoForm.logradouro.$error.minlength && enderecoForm.logradouro.$dirty" class="alert alert-danger">
+        O logradouro deve ter no mínimo 5 letras
+      </div>
+      <div ng-show="enderecoForm.logradouro.$error.maxlength && enderecoForm.logradouro.$dirty" class="alert alert-danger">
+        O logradouro deve ter no máximo 25 letras
+      </div>
+    </div>
+  </div>
+  <!-- Complemento -->
+  <div class="form-group">
+    <label for='complemento'>Complemento:</label>
+    <input type='text' ng-model='endereco.complemento' name='complemento' class="form-control" required ng-minlength="2" ng-maxlength="45">
+    <div ng-show="enderecoForm.complemento.$error.required && enderecoForm.complemento.$dirty" class="alert alert-danger">
+      Preencha o campo complemento
+    </div>
+    <div ng-show="enderecoForm.complemento.$error.minlength && enderecoForm.complemento.$dirty" class="alert alert-danger">
+      O complemento deve ter no mínimo 2 caracteres
+    </div>
+
+    <div ng-show="enderecoForm.complemento.$error.maxlength && enderecoForm.complemento.$dirty" class="alert alert-danger">
+      O complemento deve ter no máximo 20 caracteres
+    </div>
+  </div>
+  <!-- Bairro -->
+  <div class="form-group">
+    <label for='bairro'>Bairro:</label>
+    <input type='text' ng-model='endereco.bairro' name='bairro' class="form-control" required ng-minlength="5" ng-maxlength="45">
+    <div ng-show="enderecoForm.bairro.$error.required && enderecoForm.bairro.$dirty" class="alert alert-danger">
+      Preencha o campo bairro
+    </div>
+    <div ng-show="enderecoForm.bairro.$error.minlength && enderecoForm.bairro.$dirty" class="alert alert-danger">
+      O bairro deve ter no mínimo 5 caracteres
+    </div>
+
+    <div ng-show="enderecoForm.bairro.$error.maxlength && enderecoForm.bairro.$dirty" class="alert alert-danger">
+      O bairro deve ter no máximo 15 caracteres
+    </div>
+  </div>
+  <!-- CEP -->
+  <div class="form-group">
+    <label for='cep'> CEP: </label>
+    <input type='text' ng-model='endereco.cep' name='cep' class="form-control" required ng-minlength="8" ng-maxlength="8">
+    <div ng-show="enderecoForm.cep.$error.required && enderecoForm.cep.$dirty" class="alert alert-danger">
+      Preencha o campo CEP
+    </div>
+    <div ng-show="enderecoForm.cep.$error.minlength && enderecoForm.cep.$dirty" class="alert alert-danger">
+      O CEP deve ter 8 caracteres sem pontos ou espaços
+    </div>
+    <div ng-show="enderecoForm.cep.$error.maxlength && enderecoForm.cep.$dirty" class="alert alert-danger">
+      O CEP deve ter 8 caracteres sem pontos ou espaços
+    </div>
+  </div>
+  <!-- Número -->
+  <div class="form-group">
+    <label for='numero'> Número: </label>
+    <input type='text' ng-model='endereco.numero' name='numero' class="form-control" required ng-minlength="1" ng-maxlength="5">
+    <div ng-show="enderecoForm.numero.$error.required && enderecoForm.numero.$dirty" class="alert alert-danger">
+      Preencha o campo Número
+    </div>
+    <div ng-show="enderecoForm.numero.$error.minlength && enderecoForm.numero.$dirty" class="alert alert-danger">
+      O número deve ter, no mínimo, 1 caractere!
+    </div>
+    <div ng-show="enderecoForm.numero.$error.maxlength && enderecoForm.numero.$dirty" class="alert alert-danger">
+      O número deve ter, no máximo, 5 caracteres!
+    </div>
+  </div>
+  <button ng-click="cadastrar()" type="button" name="Cadastrar" value="Cadastrar" class="btn btn-outline-light btn-block" ng-disabled="enderecoForm.$invalid">Cadastrar</button><br>
+</form>

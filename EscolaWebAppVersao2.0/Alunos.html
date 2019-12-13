@@ -1,0 +1,49 @@
+ <form  name="alunoform">
+  <div class="form-group">
+    <label for="nome">Nome: </label>
+    <input type="text" class="form-control" name="nome" ng-model="aluno.nome" placeholder="Nome" ng-minlength="10"/>
+
+    <!-- ng-messages | campo nome | 1st -->
+    <div ng-messages="alunoform.nome.$error" ng-if='alunoform.nome.$dirty'>
+			<div ng-message="minlength" class="alert alert-info">
+				O campo nome deve ter no mínimo 10 caracteres.
+			</div>
+		</div>
+  </div>
+
+  <!-- Botões -->
+  <button type='reset' name='limpar' class="btn btn-secondary btn-lg btn-block">
+    Limpar
+  </button>
+  <button ng-click="listar()" class="btn btn-dark btn-lg btn-block">
+    Listar
+  </button>
+</form>
+
+<!-- Tabela de Alunos -->
+<div>
+  <table class="table table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Matrícula</th>
+        <th scope="col">Nascimento</th>
+        <th scope="col">Endereco</th>
+        <th scope="col">Curso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="aluno in alunos">
+        <td scope="row">{{aluno.id_aluno}}</td>
+        <td scope="row">{{aluno.nome}}</td>
+        <td scope="row">{{aluno.cpf}}</td>
+        <td scope="row">{{aluno.matricula}}</td>
+        <td scope="row">{{aluno.nascimento}}</td>
+        <td scope="row">{{aluno.id_endereco}}</td>
+        <td scope="row">{{aluno.id_curso}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

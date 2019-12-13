@@ -1,0 +1,48 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: arial, verdana, helvetica, sans-serif;
+  width: auto;
+  height: auto;
+}
+
+/* Box principal: container*/
+.meu-container{
+  margin: 0 auto;
+  padding: 0;
+  width: auto;
+  min-height: 100vh;
+  /* Flex */
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+header {
+  background-color: #1E90FF;
+  text-align: center;
+}
+
+main {
+  background-color: #708090;
+  flex-grow: 1;
+}
+
+footer {
+  background-color: #000000;
+}
+
+.wrapper {
+  padding: 0;
+}
+
+img.displayed{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
