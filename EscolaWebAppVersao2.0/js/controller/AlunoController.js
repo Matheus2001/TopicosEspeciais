@@ -1,4 +1,4 @@
-var alunoController = function($scope, $mdToast, alunoApi) {
+var alunoController = function($scope, $mdToast, alunoApi,$state) {
   $scope.aluno = {};
 
   $scope.cadastrar = function() {
